@@ -1,1 +1,3 @@
-# Criando sistema de token, com burn e mint
+# Create a system of Token.
+
+Seguindo sistema ERC20
