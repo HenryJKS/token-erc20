@@ -1,1 +1,1 @@
-# myToken-ERC20
+# Criando sistema de token, com burn e mint
