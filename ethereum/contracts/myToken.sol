@@ -66,6 +66,8 @@ contract myToken is ERC20Interface {
     string public name;
     uint8 public decimals;
     uint public _totalSupply;
+    uint public mintToken;
+    uint public burnToken;
 
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
@@ -135,6 +137,7 @@ contract myToken is ERC20Interface {
     function mint(uint amount) external {
         balances[msg.sender] = balances[msg.sender].add(amount);
         _totalSupply = _totalSupply.add(amount);
+        mintToken = mintToken.add(amount);
         emit Transfer(address(0), msg.sender, amount);
     }
 
@@ -142,6 +145,7 @@ contract myToken is ERC20Interface {
     function burn(uint amount) external {
         balances[msg.sender] = balances[msg.sender].sub(amount);
         _totalSupply = _totalSupply.sub(amount);
+        burnToken = burnToken.add(amount);
         emit Transfer(msg.sender, address(0), amount);
     }
 

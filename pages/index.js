@@ -44,7 +44,7 @@ class MyTokenIndex extends Component {
   render() {
     return (
       <Layout>
-        <div>{this.renderCards()}</div>
+        <div style={{marginTop:10}}>{this.renderCards()}</div>
       </Layout>
     );
   }

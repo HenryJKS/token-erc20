@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "next dev"
+    "dev": "node server.js"
   },
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.15",
@@ -14,11 +14,12 @@
     "ganache": "^7.9.1",
     "mocha": "^10.2.0",
     "next": "^13.5.6",
+    "next-routes": "^1.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
     "solc": "^0.8.21",
-    "web3": "^4.1.2"
+    "web3": "^1.10.2"
   }
 }
