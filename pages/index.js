@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Card, Grid } from "semantic-ui-react";
+import { Card, Grid, Divider } from "semantic-ui-react";
 import myToken from "../ethereum/mytoken";
 import Layout from "../components/Layout";
-import web3 from "../ethereum/web3";
+import CardMint from "../components/CardMint";
+import CardBurn from "../components/CardBurn";
 
 class MyTokenIndex extends Component {
   static async getInitialProps(props) {
@@ -12,13 +13,17 @@ class MyTokenIndex extends Component {
     const symbol = await token.methods.symbol().call();
     const nameToken = await token.methods.name().call();
     const totalSupply = await token.methods._totalSupply().call();
-    const totalSupplyFinal = web3.utils.fromWei(totalSupply, "wei");
+    const decimals = await token.methods.decimals().call();
+    const totalTransfer = await token.methods.totalTransfer().call();
+    const totalTransferDecimal = (totalTransfer / Math.pow(10, decimals)).toFixed(decimals);
+    const totalSupplyDecimal = (totalSupply /  Math.pow(10, decimals)).toFixed(decimals);
 
-    return { symbol, nameToken, totalSupplyFinal };
+
+    return { symbol, nameToken, totalSupplyDecimal, totalTransferDecimal};
   }
 
   renderCards() {
-    const { symbol, nameToken, totalSupplyFinal } = this.props;
+    const { symbol, nameToken, totalSupplyDecimal, totalTransferDecimal } = this.props;
 
     const items = [
       {
@@ -32,9 +37,14 @@ class MyTokenIndex extends Component {
         description: "The name of the token is the same name of the contract",
       },
       {
-        header: totalSupplyFinal,
+        header: `${totalSupplyDecimal} HJK`,
         meta: "Total Supply",
-        description: "Total Supply of the token",
+        description: "Total Supply of the token, with burn and mint",
+      },
+      {
+        header: `${totalTransferDecimal} HJK`,
+        meta: "Total Transfer",
+        description: "Total transfer to any address",
       },
     ];
 
@@ -44,7 +54,16 @@ class MyTokenIndex extends Component {
   render() {
     return (
       <Layout>
-        <div style={{marginTop:10}}>{this.renderCards()}</div>
+        <Grid style={{marginTop:5}}>
+          <Grid.Row>
+            <Grid.Column>{this.renderCards()}</Grid.Column>
+          </Grid.Row>
+          <Divider/>
+          <Grid.Row centered>
+            <Grid.Column widescreen={5}><CardMint/></Grid.Column>
+            <Grid.Column widescreen={5}><CardBurn/></Grid.Column>
+          </Grid.Row>
+        </Grid>
       </Layout>
     );
   }

@@ -68,6 +68,7 @@ contract myToken is ERC20Interface {
     uint public _totalSupply;
     uint public mintToken;
     uint public burnToken;
+    uint public totalTransfer;
 
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
@@ -76,7 +77,7 @@ contract myToken is ERC20Interface {
         symbol = "HJK";
         name = "Token HJK";
         decimals = 2;
-        _totalSupply = 100000;
+        _totalSupply = 1000;
         balances[0x26F44aBBbd1547aac7EB4deDdde38C3f69Ed300d] = _totalSupply;
         emit Transfer(address(0), 0x26F44aBBbd1547aac7EB4deDdde38C3f69Ed300d, _totalSupply);
     }
@@ -96,6 +97,7 @@ contract myToken is ERC20Interface {
         require(balances[msg.sender] >= tokens, "Saldo insuficiente");
         balances[msg.sender] = balances[msg.sender].sub(tokens);
         balances[to] = balances[to].add(tokens);
+        totalTransfer = totalTransfer.add(tokens);
         emit Transfer(msg.sender, to, tokens);
         return true;
     }
