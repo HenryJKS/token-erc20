@@ -69,6 +69,7 @@ contract myToken is ERC20Interface {
     uint public mintToken;
     uint public burnToken;
     uint public totalTransfer;
+    event TransferWithBlock(address from, address to, uint amount, uint blockNumber, uint timestamp);
 
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
@@ -77,7 +78,7 @@ contract myToken is ERC20Interface {
         symbol = "HJK";
         name = "Token HJK";
         decimals = 2;
-        _totalSupply = 1000;
+        _totalSupply = 1000.00;
         balances[0x26F44aBBbd1547aac7EB4deDdde38C3f69Ed300d] = _totalSupply;
         emit Transfer(address(0), 0x26F44aBBbd1547aac7EB4deDdde38C3f69Ed300d, _totalSupply);
     }
@@ -99,6 +100,7 @@ contract myToken is ERC20Interface {
         balances[to] = balances[to].add(tokens);
         totalTransfer = totalTransfer.add(tokens);
         emit Transfer(msg.sender, to, tokens);
+        emit TransferWithBlock(msg.sender, to, tokens, block.number, block.timestamp);
         return true;
     }
 

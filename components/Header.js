@@ -31,6 +31,14 @@ export default class Header extends Component {
         active={activeItem === "transfer"}
         onClick={this.handleItemClick}/>
         </Link>
+
+        <Link route="/mytoken/transferlog" legacyBehavior>
+          <Menu.Item
+          name="Transfer Log"
+          active={activeItem === "Tranfer Log"}
+          onClick={this.handleItemClick}
+          />
+        </Link>
       </Menu>
     );
   }

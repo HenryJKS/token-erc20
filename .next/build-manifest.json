@@ -27,10 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/mytoken/burntoken": [
+    "/mytoken/transferlog": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/mytoken/burntoken.js"
+      "static/chunks/pages/mytoken/transferlog.js"
     ],
     "/mytoken/transfertoken": [
       "static/chunks/webpack.js",
