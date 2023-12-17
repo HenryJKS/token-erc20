@@ -1,3 +1,3 @@
 # Create a system of Token.
 
-Seguindo sistema ERC20
+* Seguindo sistema ERC20
