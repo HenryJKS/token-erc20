@@ -6,7 +6,7 @@ export default () => {
   return (
     <Card>
       <Image
-        src="https://th.bing.com/th/id/OIG.TWJEln8cm.jTIORXM.cq?pid=ImgGn&w=1024&h=1024&rs=1"
+        src="https://i.imgur.com/hsodZEW.jpg"
         wrapped
         ui={false}
       />

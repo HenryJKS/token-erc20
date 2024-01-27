@@ -3,8 +3,8 @@ const Web3 = require("web3");
 const compiledMyToken = require('./build/myToken.json');
 
 const provider = new HDWalletProvider (
-    'between inform top steel awkward below dress mother spare banana iron law',
-    'https://sepolia.infura.io/v3/ea477898b8754b17829cb4ba95b8cbed'
+    '12 WORD MNEMONIC',
+    'INFURA API'
 );
 
 const web3 = new Web3(provider);

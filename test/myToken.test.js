@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
 const ganache = require('ganache');
-const { Web3 } = require('web3');
+const Web3  = require('web3');
 const web3 = new Web3(ganache.provider());
 const compiledMyToken = require("../ethereum/build/myToken.json");
 
@@ -25,7 +25,7 @@ describe('myToken Contract', () => {
         totalSupply = await myToken.methods._totalSupply().call({
             from: accounts[0]
         });
-        assert.equal(100000, totalSupply);
+        assert.equal(1000, totalSupply);
     })
 
     it("Mint 20 ether", async() => {
@@ -39,7 +39,7 @@ describe('myToken Contract', () => {
             from: accounts[0]
         })
 
-        assert.equal(100020, totalSupply);
+        assert.equal(1020, totalSupply);
     
     });
 
