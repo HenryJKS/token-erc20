@@ -27,15 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/mytoken/minttoken": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/mytoken/minttoken.js"
+    ],
     "/mytoken/transferlog": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/mytoken/transferlog.js"
-    ],
-    "/mytoken/transfertoken": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/mytoken/transfertoken.js"
     ]
   },
   "ampFirstPages": []

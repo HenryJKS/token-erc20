@@ -3,8 +3,8 @@ const Web3 = require("web3");
 const compiledMyToken = require('./build/myToken.json');
 
 const provider = new HDWalletProvider (
-    '12 WORD MNEMONIC',
-    'INFURA API'
+    process.env.MNEMONIC,
+    process.env.API_INFURA
 );
 
 const web3 = new Web3(provider);
