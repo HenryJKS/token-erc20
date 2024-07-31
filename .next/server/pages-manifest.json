@@ -3,7 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/mytoken/transferlog": "pages/mytoken/transferlog.js",
-  "/mytoken/minttoken": "pages/mytoken/minttoken.js",
-  "/mytoken/transfertoken": "pages/mytoken/transfertoken.js"
+  "/mytoken/transfertoken": "pages/mytoken/transfertoken.js",
+  "/mytoken/minttoken": "pages/mytoken/minttoken.js"
 }

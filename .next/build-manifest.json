@@ -32,10 +32,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/mytoken/minttoken.js"
     ],
-    "/mytoken/transferlog": [
+    "/mytoken/transfertoken": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/mytoken/transferlog.js"
+      "static/chunks/pages/mytoken/transfertoken.js"
     ]
   },
   "ampFirstPages": []
